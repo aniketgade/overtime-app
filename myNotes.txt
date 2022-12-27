@@ -1,0 +1,2 @@
+rails c --sandbox 
+This lets you create a sandbox console environment. The db records created during this session will be removed upon exiting the session. 
