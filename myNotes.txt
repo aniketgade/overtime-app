@@ -1,2 +1,5 @@
 rails c --sandbox 
-This lets you create a sandbox console environment. The db records created during this session will be removed upon exiting the session. 
+# This lets you create a sandbox console environment. The db records created during this session will be removed upon exiting the session. 
+
+rails routes -c posts
+# This lets you see paths for posts resource
