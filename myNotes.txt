@@ -3,3 +3,16 @@ rails c --sandbox
 
 rails routes -c posts
 # This lets you see paths for posts resource
+
+
+bundle exec rake db: setup
+# Runs the seeds file and overwrites the dev Database with seed data
+
+
+def show
+        @post = Post.find(params[:id])
+end
+# Always remember to create the instance in controller method before calling it in view 
+
+# show.html.erb
+<%= @post.inspect %>
