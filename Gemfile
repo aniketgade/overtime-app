@@ -18,6 +18,14 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.0'
   gem 'capybara'
   gem 'database_cleaner'
+
+  # Basic Pry Setup
+  gem 'awesome_print' # pretty print ruby objects
+  gem 'pry' # Console with powerful introspection capabilities
+  gem 'pry-byebug' # Integrates pry with byebug
+  gem 'pry-doc' # Provide MRI Core documentation
+  gem 'pry-rails' # Causes rails console to open pry. `DISABLE_PRY_RAILS=1 rails c` can still open with IRB
+
 end
 
 group :development do

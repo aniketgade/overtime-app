@@ -16,3 +16,23 @@ end
 
 # show.html.erb
 <%= @post.inspect %>
+
+
+include Warden::Test::Helpers
+Warden.test_mode!
+# Added this to rails helper since Capybara is not good enough to mimic user login. Devise let's us do that with Warden.
+
+
+rails g migration add_name_of_column_to_table_name name_of_column:datatype --no-test-framework
+# To add an additional column to a table, follow this formula
+
+
+rails g migration AddUserToUploads user:references
+# When you already have users and uploads tables and wish to add a new relationship between them.
+# All you need to do is: just generate a migration using the following command:
+
+#devise lets us save a user object in the session cookie and is accessible via current_user method
+
+before_action :authenticate_user!
+# Add this line in the ApplicationController to make sure the user cannot access any page in the app without signing in
+
