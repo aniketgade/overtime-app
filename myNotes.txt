@@ -3,7 +3,11 @@ rails c --sandbox
 
 rails routes -c posts
 # This lets you see paths for posts resource
+# rake routes is deprecated in favor of rails routes in latest rails versions
 
+# Route info obtained from above cmd can be used to link the button or url to that page, like this
+<%= link_to "Time Entries", posts_path %>
+# This will make sure that when user clicks on Time Entries, it goes to Posts page wherever posts_path takes it
 
 bundle exec rake db: setup
 # Runs the seeds file and overwrites the dev Database with seed data
@@ -36,3 +40,17 @@ rails g migration AddUserToUploads user:references
 before_action :authenticate_user!
 # Add this line in the ApplicationController to make sure the user cannot access any page in the app without signing in
 
+
+# https://layoutit.com/build is a drag and drop interface that let's you visualize your bootstrap and builds code for you
+
+
+# To create a partial, you start the filename with underscore. For example, _nav.html.erb
+#And then you render that nav bar using embedded ruby in application.html.erb 
+<%= render 'shared/nav' %> 
+
+
+# I couldn't get the dropdown in main nav bar to work because of lack of jquery, so I added these lines inside  <body> in application.html.erb just before the ending </body> tag
+ <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+ <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+ 
+ 
